@@ -1,0 +1,36 @@
+{
+  "name": "skd3",
+  "homepage": "https://github.com/fabriciorhs/skd3",
+  "authors": [
+    "Fabricio Rodrigues"
+  ],
+  "description": "Sankey Diagram made easy. A javascript library that extends the popular D3.js/d3-sankey to enable fast and beautiful.",
+  "main": [
+    "build/skd3.min.js",
+    "build/skd3.min.css"
+  ],
+  "keywords": [
+    "sankey",
+    "d3",
+    "d3-sankey",
+    "diagram"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "d3": "^4.10.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "src",
+    "examples",
+    "GruntFile.js",
+    "*.html",
+    "*.log",
+    "*.xml",
+    "*.json",
+    "*.md"
+  ]
+}
