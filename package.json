@@ -1,0 +1,67 @@
+{
+  "name": "skd3",
+  "version": "0.1.0",
+  "url": "https://github.com/fabriciorhs/skd3",
+  "description": "Sankey Diagram made easy. A javascript library that extends the popular D3.js/d3-sankey to enable fast and beautiful.",
+  "keywords": [
+    "sankey",
+    "d3",
+    "d3-sankey",
+    "diagram"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabriciorhs/skd3"
+  },
+  "author": {
+    "name": "Fabricio Rodrigues",
+    "email": "fabriciorhs@gmail.com",
+    "url": "https://bl.ocks.org/fabriciorhs"
+  },
+  "contributors": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fabriciorhs/skd3/issues",
+    "email": "fabriciorhs@gmail.com"
+  },
+  "homepage": "https://bl.ocks.org/fabriciorhs",
+  "scripts": {
+    "test": "grunt",
+    "build": "grunt"
+  },
+  "dependencies": {
+    "d3-sankey": "0.5.0",
+    "d3-tip": "git+https://github.com/Caged/d3-tip.git#master"
+  },
+  "devDependencies": {
+    "uglify-js": "2",
+    "es6-promise": "^4.0.3",
+    "autoprefixer": "^6.5.0",
+    "grunt-cli": "^1.2.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "~1.0.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.13.0",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-uglify": "~0.9.1",
+    "grunt-contrib-watch": "~0.3.1",
+    "grunt-karma": "^0.9.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-text-replace": "^0.4.0"
+  },
+  "filename": "skd3.min.js",
+  "npmName": "skd3",
+  "npmFileMap": [
+    {
+      "basePath": "/",
+      "files": [
+        "skd3.js",
+        "skd3.min.js"
+      ]
+    }
+  ],
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "d3": "4.10.0"
+  }
+}
