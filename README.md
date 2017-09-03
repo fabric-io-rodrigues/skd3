@@ -16,15 +16,21 @@ Source: Department of Energy & Climate Change, from: [`Mike Bostock - json sampl
 
 ## Dependencies
 
-SKD3 requires [d3.js](http://d3js.org/) version **[4.9.0](https://github.com/d3/d3/releases/tag/v4.9.0)** and later.
+SKD3 requires [d3.js](http://d3js.org/) minimal version **[4.9.0](https://github.com/d3/d3/releases/tag/v4.9.0)** and later.
+
+Already tested with the latest version [4.10.2](https://github.com/d3/d3/releases/tag/v4.10.2)
+
+```html
+<script src="https://unpkg.com/d3@4.10.2/build/d3.min.js"></script>
+```
 
 ## Installing
 
-If you use NPM, `npm install skd3`. Otherwise, download the [latest release](https://github.com/fabriciorhs/skd3/releases/latest). You can also load directly from [rawgit.com](https://cdn.rawgit.com/):
+If you use NPM, `npm install skd3`. Otherwise, download the [latest release](https://github.com/fabriciorhs/skd3/releases/latest). You can also load directly from [unpkg.com](https://unpkg.com/):
 
 ```html
-<script src="https://cdn.rawgit.com/fabriciorhs/skd3/master/build/sk.d3.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/fabriciorhs/skd3/master/build/sk.d3.min.css"  />
+<script src="https://unpkg.com/skd3/build/sk.d3.min.js"></script>
+<link  href="https://unpkg.com/skd3/build/sk.d3.min.css" rel="stylesheet" type="text/css" />
 <style>
 	#sankeyChart {
 		height: 500px;
@@ -52,6 +58,7 @@ var configSankey = {
 			minSize: 14,
 			maxSize: 30
 		},
+        fontSize: 14, // if not dynamicSize enabled
 		canDragNodes: true,
 		colors: d3.scaleOrdinal(d3.schemeCategory10)
 	},
@@ -59,9 +66,10 @@ var configSankey = {
 		formatValue: function(val) {
 			return d3.format(",.0f")(val) + ' TWh';
 		}
+        unit: 'TWh' // if not set formatValue function
 	},
 	tooltip: {
-		infoDiv: true,
+		infoDiv: true,  // if false display default tooltip
 		labelSource: 'Input:',
 		labelTarget: 'Output:'
 	}
@@ -89,9 +97,10 @@ objSankey.updateData(new_dataJson);
 ```
 
 Result:
-
 <img alt="Sankey transitions" src="https://raw.githubusercontent.com/fabriciorhs/skd3/master/img/sankey_transitions.gif" width="400">
 
+## Support to tooltips (using option/tooltip/infoDiv)
+<img alt="Sankey Tooltip" src="https://raw.githubusercontent.com/fabriciorhs/skd3/master/img/tooltip.png" width="350">
 
 ## Contributing
 
