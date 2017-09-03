@@ -10,9 +10,11 @@ Sankey Diagram made easy. A javascript library that extends the popular D3.js/d3
 
 Sankey diagrams visualize the directed flow between nodes in an acyclic network. For example, this diagram shows a possible scenario of UK energy production and consumption in 2050:
 
-<img alt="Sankey diagram" src="https://raw.githubusercontent.com/fabriciorhs/skd3/master/img/energy.png" width="960">
+[<img alt="Sankey diagram" src="https://raw.githubusercontent.com/fabriciorhs/skd3/master/img/energy.png" width="960">](https://bl.ocks.org/FabricioRHS/7dc4a5be7caaf3d8d8044680a7347447)
 
 Source: Department of Energy & Climate Change, from: [`Mike Bostock - json sample`](https://bl.ocks.org/mbostock/ca9a0bb7ba204d12974bca90acc507c0).
+
+See live [sample](https://bl.ocks.org/FabricioRHS/7dc4a5be7caaf3d8d8044680a7347447)
 
 ## Dependencies
 
@@ -97,6 +99,7 @@ objSankey.updateData(new_dataJson);
 ```
 
 Result:
+
 <img alt="Sankey transitions" src="https://raw.githubusercontent.com/fabriciorhs/skd3/master/img/sankey_transitions.gif" width="400">
 
 ## Support to tooltips (using option/tooltip/infoDiv)
