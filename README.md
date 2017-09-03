@@ -20,7 +20,7 @@ SKD3 requires [d3.js](http://d3js.org/) version **[4.9.0](https://github.com/d3/
 
 ## Installing
 
-If you use NPM, `npm install skd3`. Otherwise, download the [latest release](https://github.com/fabriciorhs/skd3/releases/latest). You can also load directly from [unpkg.com](https://cdn.rawgit.com/):
+If you use NPM, `npm install skd3`. Otherwise, download the [latest release](https://github.com/fabriciorhs/skd3/releases/latest). You can also load directly from [rawgit.com](https://cdn.rawgit.com/):
 
 ```html
 <script src="https://cdn.rawgit.com/fabriciorhs/skd3/master/build/sk.d3.min.js"></script>
