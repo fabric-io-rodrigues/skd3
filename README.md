@@ -1,7 +1,7 @@
 # skd3
 Sankey Diagram made easy. A javascript library that extends the popular D3.js/d3-sankey to enable fast and beautiful.
 
-[![Build Status](https://travis-ci.org/fabriciorhs/skd3.svg?branch=master)](https://travis-ci.org/fabriciorhs/skd3)
+[![Build Status](https://travis-ci.org/FabricioRHS/skd3.svg?branch=master)](https://travis-ci.org/fabriciorhs/skd3)
 [![Dependencies Status](https://david-dm.org/fabriciorhs/skd3.svg)](https://david-dm.org/fabriciorhs/skd3)
 
 <sup>Inspired by the work of Mike Bostock's [`d3-sankey`](http://github.com/d3/d3-sankey)</sup>
@@ -72,16 +72,15 @@ Example data json:
 
 ```js
 var datajson = {nodes: [
-  {"id": "Alice"},
-  {"id": "Bob"},
-  {"id": "Carol"}
+  {id: 0, name: "Alice", color: "green"},
+  {id: 1, name: "Bob", color: "yellow"},
+  {id: 2, name: "Carol", color: "blue"}
 ],
 links: [
-  {"source": "Alice", "target": "Bob"},
-  {"source": "Bob", "target": "Carol"}
+  {source: 0, target: 1, value: 1},
+  {source: 1, target: 2, value: 1}
 ]};
 ```
-
 
 ## Update links values using d3`s transitions:
 
