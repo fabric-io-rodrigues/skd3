@@ -31,7 +31,9 @@
   },
   "dependencies": {
     "d3-sankey": "0.5.0",
-    "d3-tip": "git+https://github.com/Caged/d3-tip.git#master"
+    "d3-tip": "git+https://github.com/Caged/d3-tip.git#master",
+    "ember": "^1.0.3",
+    "nodejs": "0.0.0"
   },
   "devDependencies": {
     "uglify-js": "2",
