@@ -1,14 +1,12 @@
 # skd3
 Sankey Diagram made easy. A javascript library that extends the popular D3.js/d3-sankey to enable fast and beautiful.
 
-[![Build Status](https://travis-ci.org/FabricioRHS/skd3.svg?branch=master)](https://travis-ci.org/fabriciorhs/skd3)
+[![Build Status](https://travis-ci.org/FabricioRHS/skd3.svg?branch=master)](https://travis-ci.org/FabricioRHS/skd3)
 [![Dependencies Status](https://david-dm.org/fabriciorhs/skd3.svg)](https://david-dm.org/fabriciorhs/skd3)
 
-<sup>Inspired by the work of Mike Bostock's [`d3-sankey`](http://github.com/d3/d3-sankey)</sup>
+Inspired by the work of Mike Bostock's [`d3-sankey`](http://github.com/d3/d3-sankey), As a proposal to simplify the generation of the sankey chart.
 
->As a proposal to simplify the generation of the sankey chart
-
-Sankey diagrams visualize the directed flow between nodes in an acyclic network. For example, this diagram shows a possible scenario of UK energy production and consumption in 2050:
+Sankey diagrams visualize the directed flow between nodes in an acyclic network. For example: ([`D3's classic energy sankey diagram`](https://bost.ocks.org/mike/sankey/)) this diagram shows a possible scenario of UK energy production and consumption in 2050:
 
 [<img alt="Sankey diagram" src="https://raw.githubusercontent.com/fabriciorhs/skd3/master/img/energy.png" width="960">](https://bl.ocks.org/FabricioRHS/7dc4a5be7caaf3d8d8044680a7347447)
 
@@ -18,7 +16,7 @@ See live [sample](https://bl.ocks.org/FabricioRHS/7dc4a5be7caaf3d8d8044680a73474
 
 ## Dependencies
 
-SKD3 requires [d3.js](http://d3js.org/) minimal version **[4.9.0](https://github.com/d3/d3/releases/tag/v4.9.0)** and later.
+SKD3 requires D3v4 ([d3.js](http://d3js.org/)) minimal version **[4.9.0](https://github.com/d3/d3/releases/tag/v4.9.0)** or later.
 
 Already tested with the latest version [4.10.2](https://github.com/d3/d3/releases/tag/v4.10.2)
 
