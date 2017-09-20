@@ -31,13 +31,10 @@
   },
   "dependencies": {
     "d3-sankey": "^0.7.1",
-    "d3-tip": "^0.7.1",
-    "ember": "^1.0.3",
-    "nodejs": "0.0.0"
+    "d3-tip": "^0.7.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
-    "babel": "^6.23.0",
     "es6-promise": "4.1.1",
     "grunt": "^1.0.1",
     "grunt-cli": "1.2.0",
@@ -47,13 +44,8 @@
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-uglify": "3.1.0",
     "grunt-contrib-watch": "1.0.0",
-    "grunt-defs": "^2.0.3",
-    "grunt-karma": "2.0.0",
     "grunt-postcss": "0.9.0",
-    "grunt-text-replace": "0.4.0",
-    "os": "^0.1.1",
-    "postcss": "^6.0.11",
-    "uglify-js": "3.1.1"
+    "grunt-text-replace": "0.4.0"
   },
   "filename": "skd3.min.js",
   "npmName": "skd3",
@@ -68,7 +60,6 @@
   ],
   "readmeFilename": "README.md",
   "peerDependencies": {
-    "d3": "4.10.2",
-    "grunt": "1.0.1"
+    "d3": "4.10.2"
   }
 }
