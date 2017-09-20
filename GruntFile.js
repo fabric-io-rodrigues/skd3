@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+   "use strict";
     var _pkg = grunt.file.readJSON('package.json');
 
     // allows autoprefixer to work on older node_js versions
