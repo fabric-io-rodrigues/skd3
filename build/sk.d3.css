@@ -1,4 +1,4 @@
-/* skd3 version 0.1.0 (https://github.com/fabriciorhs/skd3) 2017-09-03 */
+/* skd3 version 0.2.0 (https://github.com/fabriciorhs/skd3) 2017-09-20 */
 
 .sk-svg {
     font-family: sans-serif;
@@ -31,8 +31,10 @@
     fill: none;
     stroke: #000;
     stroke-opacity: .16;
+    -webkit-transition-property: stroke-opacity;
     transition-property: stroke-opacity;
-    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
 }
 .sk-link:hover {
     stroke-opacity: .5;
@@ -96,5 +98,6 @@
     border-radius: 2px;
     pointer-events: none;
     background: white;
-    box-shadow: 1px 1px 4px grey;
+    -webkit-box-shadow: 1px 1px 4px grey;
+            box-shadow: 1px 1px 4px grey;
 }

@@ -1,4 +1,4 @@
-/* skd3 version 0.1.0 (https://github.com/fabriciorhs/skd3) 2017-09-03 */
+/* skd3 version 0.2.0 (https://github.com/fabriciorhs/skd3) 2017-09-20 */
 (function(){
 // set up main sk object
 var sk = {};
@@ -17,53 +17,42 @@ if (typeof(module) !== 'undefined' && typeof(exports) !== 'undefined') {
 if (typeof(window) !== 'undefined') {
   window.sk = sk;
 }
-// https://github.com/d3/d3-sankey Version 0.5.0. Copyright 2017 Mike Bostock.
-!function(n,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports,require("d3-array"),require("d3-collection"),require("d3-shape")):"function"==typeof define&&define.amd?define(["exports","d3-array","d3-collection","d3-shape"],t):t(n.d3=n.d3||{},n.d3,n.d3,n.d3)}(this,function(n,t,e,r){"use strict";function o(n){return function(){return n}}function u(n,t){return n.source.y-t.source.y}function i(n,t){return n.target.y-t.target.y}function c(n,t){return n.y-t.y}function f(n){return n.value}function s(n){return n.y+n.dy/2}function a(n){return s(n.source)*n.value}function d(n){return s(n.target)*n.value}function y(n){return n.nodes}function l(n){return n.links}function h(n){return[n.source.x+n.source.dx,n.source.y+n.sy+n.dy/2]}function g(n){return[n.target.x,n.target.y+n.ty+n.dy/2]}var k=function(){function n(){var n={nodes:j.apply(null,arguments),links:H.apply(null,arguments)};return r(n),h(n),g(n),v(n),E(n),n}function r(n){n.nodes.forEach(function(n){n.sourceLinks=[],n.targetLinks=[]}),n.links.forEach(function(t){var e=t.source,r=t.target;"number"==typeof e&&(e=t.source=n.nodes[t.source]),"number"==typeof r&&(r=t.target=n.nodes[t.target]),e.sourceLinks.push(t),r.targetLinks.push(t)})}function h(n){n.nodes.forEach(function(n){n.value=Math.max(t.sum(n.sourceLinks,f),t.sum(n.targetLinks,f))})}function g(n){for(var t,e=n.nodes,r=0;e.length;)t=[],e.forEach(function(n){n.x=r,n.dx=q,n.sourceLinks.forEach(function(n){t.indexOf(n.target)<0&&t.push(n.target)})}),e=t,++r;k(n,r),p(n,(m-L-q)/(r-1))}function k(n,t){n.nodes.forEach(function(n){n.sourceLinks.length||(n.x=t-1)})}function p(n,t){n.nodes.forEach(function(n){n.x=L+n.x*t})}function v(n){function r(){o.forEach(function(n){var t,e,r,o=x,u=n.length;for(n.sort(c),r=0;r<u;++r)t=n[r],e=o-t.y,e>0&&(t.y+=e),o=t.y+t.dy+z;if((e=o-z-b)>0)for(o=t.y-=e,r=u-2;r>=0;--r)t=n[r],e=t.y+t.dy+z-o,e>0&&(t.y-=e),o=t.y})}var o=e.nest().key(function(n){return n.x}).sortKeys(t.ascending).entries(n.nodes).map(function(n){return n.values});!function(){var e=t.min(o,function(n){return(b-x-(n.length-1)*z)/t.sum(n,f)});o.forEach(function(n){n.forEach(function(n,t){n.y=t,n.dy=n.value*e})}),n.links.forEach(function(n){n.dy=n.value*e})}(),r();for(var u=1,i=M;i>0;--i)!function(n){o.slice().reverse().forEach(function(e){e.forEach(function(e){e.sourceLinks.length&&(e.y+=(t.sum(e.sourceLinks,d)/t.sum(e.sourceLinks,f)-s(e))*n)})})}(u*=.99),r(),function(n){o.forEach(function(e){e.forEach(function(e){e.targetLinks.length&&(e.y+=(t.sum(e.targetLinks,a)/t.sum(e.targetLinks,f)-s(e))*n)})})}(u),r()}function E(n){n.nodes.forEach(function(n){n.sourceLinks.sort(i),n.targetLinks.sort(u)}),n.nodes.forEach(function(n){var t=0,e=0;n.sourceLinks.forEach(function(n){n.sy=t,t+=n.dy}),n.targetLinks.forEach(function(n){n.ty=e,e+=n.dy})})}var L=0,x=0,m=1,b=1,q=24,z=8,j=y,H=l,M=32;return n.update=function(n){return E(n),n},n.nodeWidth=function(t){return arguments.length?(q=+t,n):q},n.nodePadding=function(t){return arguments.length?(z=+t,n):z},n.nodes=function(t){return arguments.length?(j="function"==typeof t?t:o(t),n):j},n.links=function(t){return arguments.length?(H="function"==typeof t?t:o(t),n):H},n.size=function(t){return arguments.length?(L=x=0,m=+t[0],b=+t[1],n):[m-L,b-x]},n.extent=function(t){return arguments.length?(L=+t[0][0],m=+t[1][0],x=+t[0][1],b=+t[1][1],n):[[L,x],[m,b]]},n.iterations=function(t){return arguments.length?(M=+t,n):M},n},p=function(){return r.linkHorizontal().source(h).target(g)};n.sankey=k,n.sankeyLinkHorizontal=p,Object.defineProperty(n,"__esModule",{value:!0})});/**
- * d3.tip
- * Copyright (c) 2013-2017 Justin Palmer
- *
- * Tooltips for d3.js SVG visualizations
- */
-// eslint-disable-next-line no-extra-semi
-;(function(root, factory) {
+// https://github.com/d3/d3-sankey Version 0.7.1. Copyright 2017 Mike Bostock.
+!function(n,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports,require("d3-array"),require("d3-collection"),require("d3-shape")):"function"==typeof define&&define.amd?define(["exports","d3-array","d3-collection","d3-shape"],t):t(n.d3=n.d3||{},n.d3,n.d3,n.d3)}(this,function(n,t,e,r){"use strict";function o(n){return n.target.depth}function u(n){return n.depth}function i(n,t){return t-1-n.height}function c(n,t){return n.sourceLinks.length?n.depth:t-1}function f(n){return n.targetLinks.length?n.depth:n.sourceLinks.length?t.min(n.sourceLinks,o)-1:0}function s(n){return function(){return n}}function a(n,t){return d(n.source,t.source)||n.index-t.index}function h(n,t){return d(n.target,t.target)||n.index-t.index}function d(n,t){return n.y0-t.y0}function l(n){return n.value}function y(n){return(n.y0+n.y1)/2}function g(n){return y(n.source)*n.value}function k(n){return y(n.target)*n.value}function p(n){return n.index}function v(n){return n.nodes}function L(n){return n.links}function E(n,t){var e=n.get(t);if(!e)throw new Error("missing: "+t);return e}function x(n){return[n.source.x1,n.y0]}function m(n){return[n.target.x0,n.y1]}var w=function(){function n(){var n={nodes:O.apply(null,arguments),links:H.apply(null,arguments)};return r(n),o(n),u(n),i(n),f(n),n}function r(n){n.nodes.forEach(function(n,t){n.index=t,n.sourceLinks=[],n.targetLinks=[]});var t=e.map(n.nodes,q);n.links.forEach(function(n,e){n.index=e;var r=n.source,o=n.target;"object"!=typeof r&&(r=n.source=E(t,r)),"object"!=typeof o&&(o=n.target=E(t,o)),r.sourceLinks.push(n),o.targetLinks.push(n)})}function o(n){n.nodes.forEach(function(n){n.value=Math.max(t.sum(n.sourceLinks,l),t.sum(n.targetLinks,l))})}function u(n){var t,e,r;for(t=n.nodes,e=[],r=0;t.length;++r,t=e,e=[])t.forEach(function(n){n.depth=r,n.sourceLinks.forEach(function(n){e.indexOf(n.target)<0&&e.push(n.target)})});for(t=n.nodes,e=[],r=0;t.length;++r,t=e,e=[])t.forEach(function(n){n.height=r,n.targetLinks.forEach(function(n){e.indexOf(n.source)<0&&e.push(n.source)})});var o=(w-x-b)/(r-1);n.nodes.forEach(function(n){n.x1=(n.x0=x+Math.max(0,Math.min(r-1,Math.floor(z.call(null,n,r))))*o)+b})}function i(n){function r(){o.forEach(function(n){var t,e,r,o=m,u=n.length;for(n.sort(d),r=0;r<u;++r)(e=o-(t=n[r]).y0)>0&&(t.y0+=e,t.y1+=e),o=t.y1+j;if((e=o-j-M)>0)for(o=t.y0-=e,t.y1-=e,r=u-2;r>=0;--r)(e=(t=n[r]).y1+j-o)>0&&(t.y0-=e,t.y1-=e),o=t.y0})}var o=e.nest().key(function(n){return n.x0}).sortKeys(t.ascending).entries(n.nodes).map(function(n){return n.values});!function(){var e=t.min(o,function(n){return(M-m-(n.length-1)*j)/t.sum(n,l)});o.forEach(function(n){n.forEach(function(n,t){n.y1=(n.y0=t)+n.value*e})}),n.links.forEach(function(n){n.width=n.value*e})}(),r();for(var u=1,i=P;i>0;--i)!function(n){o.slice().reverse().forEach(function(e){e.forEach(function(e){if(e.sourceLinks.length){var r=(t.sum(e.sourceLinks,k)/t.sum(e.sourceLinks,l)-y(e))*n;e.y0+=r,e.y1+=r}})})}(u*=.99),r(),function(n){o.forEach(function(e){e.forEach(function(e){if(e.targetLinks.length){var r=(t.sum(e.targetLinks,g)/t.sum(e.targetLinks,l)-y(e))*n;e.y0+=r,e.y1+=r}})})}(u),r()}function f(n){n.nodes.forEach(function(n){n.sourceLinks.sort(h),n.targetLinks.sort(a)}),n.nodes.forEach(function(n){var t=n.y0,e=t;n.sourceLinks.forEach(function(n){n.y0=t+n.width/2,t+=n.width}),n.targetLinks.forEach(function(n){n.y1=e+n.width/2,e+=n.width})})}var x=0,m=0,w=1,M=1,b=24,j=8,q=p,z=c,O=v,H=L,P=32;return n.update=function(n){return f(n),n},n.nodeId=function(t){return arguments.length?(q="function"==typeof t?t:s(t),n):q},n.nodeAlign=function(t){return arguments.length?(z="function"==typeof t?t:s(t),n):z},n.nodeWidth=function(t){return arguments.length?(b=+t,n):b},n.nodePadding=function(t){return arguments.length?(j=+t,n):j},n.nodes=function(t){return arguments.length?(O="function"==typeof t?t:s(t),n):O},n.links=function(t){return arguments.length?(H="function"==typeof t?t:s(t),n):H},n.size=function(t){return arguments.length?(x=m=0,w=+t[0],M=+t[1],n):[w-x,M-m]},n.extent=function(t){return arguments.length?(x=+t[0][0],w=+t[1][0],m=+t[0][1],M=+t[1][1],n):[[x,m],[w,M]]},n.iterations=function(t){return arguments.length?(P=+t,n):P},n},M=function(){return r.linkHorizontal().source(x).target(m)};n.sankey=w,n.sankeyCenter=f,n.sankeyLeft=u,n.sankeyRight=i,n.sankeyJustify=c,n.sankeyLinkHorizontal=M,Object.defineProperty(n,"__esModule",{value:!0})});// d3.tip
+// Copyright (c) 2013 Justin Palmer
+//
+// Tooltips for d3.js SVG visualizations
+
+(function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module with d3 as a dependency.
-    define([
-      'd3-collection',
-      'd3-selection'
-    ], factory)
+    define(['d3'], factory)
   } else if (typeof module === 'object' && module.exports) {
-    /* eslint-disable global-require */
     // CommonJS
-    var d3Collection = require('d3-collection'),
-        d3Selection = require('d3-selection')
-    module.exports = factory(d3Collection, d3Selection)
-    /* eslint-enable global-require */
+    var d3 = require('d3')
+    module.exports = factory(d3)
   } else {
     // Browser global.
-    var d3 = root.d3
-    // eslint-disable-next-line no-param-reassign
-    root.d3.tip = factory(d3, d3)
+    root.d3.tip = factory(root.d3)
   }
-}(this, function(d3Collection, d3Selection) {
+}(this, function (d3) {
+
   // Public - contructs a new tooltip
   //
   // Returns a tip
   return function() {
-    var direction   = d3TipDirection,
-        offset      = d3TipOffset,
-        html        = d3TipHTML,
-        rootElement = document.body,
-        node        = initNode(),
-        svg         = null,
-        point       = null,
-        target      = null
+    var direction = d3_tip_direction,
+        offset    = d3_tip_offset,
+        html      = d3_tip_html,
+        node      = initNode(),
+        svg       = null,
+        point     = null,
+        target    = null
 
     function tip(vis) {
       svg = getSVGNode(vis)
-      if (!svg) return
       point = svg.createSVGPoint()
-      rootElement.appendChild(node)
+      document.body.appendChild(node)
     }
 
     // Public - show the tooltip on the screen
@@ -71,7 +60,7 @@ if (typeof(window) !== 'undefined') {
     // Returns a tip
     tip.show = function() {
       var args = Array.prototype.slice.call(arguments)
-      if (args[args.length - 1] instanceof SVGElement) target = args.pop()
+      if(args[args.length - 1] instanceof SVGElement) target = args.pop()
 
       var content = html.apply(this, args),
           poffset = offset.apply(this, args),
@@ -79,22 +68,20 @@ if (typeof(window) !== 'undefined') {
           nodel   = getNodeEl(),
           i       = directions.length,
           coords,
-          scrollTop  = document.documentElement.scrollTop ||
-            rootElement.scrollTop,
-          scrollLeft = document.documentElement.scrollLeft ||
-            rootElement.scrollLeft
+          scrollTop  = document.documentElement.scrollTop || document.body.scrollTop,
+          scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft
 
       nodel.html(content)
         .style('opacity', 1).style('pointer-events', 'all')
 
-      while (i--) nodel.classed(directions[i], false)
-      coords = directionCallbacks.get(dir).apply(this)
+      while(i--) nodel.classed(directions[i], false)
+      coords = direction_callbacks.get(dir).apply(this)
       nodel.classed(dir, true)
-        .style('top', (coords.top + poffset[0]) + scrollTop + 'px')
-        .style('left', (coords.left + poffset[1]) + scrollLeft + 'px')
+      	.style('top', (coords.top +  poffset[0]) + scrollTop + 'px')
+      	.style('left', (coords.left + poffset[1]) + scrollLeft + 'px')
 
-      return tip
-    }
+      return tip;
+    };
 
     // Public - hide the tooltip
     //
@@ -105,39 +92,37 @@ if (typeof(window) !== 'undefined') {
       return tip
     }
 
-    // Public: Proxy attr calls to the d3 tip container.
-    // Sets or gets attribute value.
+    // Public: Proxy attr calls to the d3 tip container.  Sets or gets attribute value.
     //
     // n - name of the attribute
     // v - value of the attribute
     //
     // Returns tip or attribute value
-    // eslint-disable-next-line no-unused-vars
     tip.attr = function(n, v) {
       if (arguments.length < 2 && typeof n === 'string') {
         return getNodeEl().attr(n)
+      } else {
+        var args =  Array.prototype.slice.call(arguments)
+        d3.selection.prototype.attr.apply(getNodeEl(), args)
       }
 
-      var args =  Array.prototype.slice.call(arguments)
-      d3Selection.selection.prototype.attr.apply(getNodeEl(), args)
       return tip
     }
 
-    // Public: Proxy style calls to the d3 tip container.
-    // Sets or gets a style value.
+    // Public: Proxy style calls to the d3 tip container.  Sets or gets a style value.
     //
     // n - name of the property
     // v - value of the property
     //
     // Returns tip or style property value
-    // eslint-disable-next-line no-unused-vars
     tip.style = function(n, v) {
       if (arguments.length < 2 && typeof n === 'string') {
         return getNodeEl().style(n)
+      } else {
+        var args = Array.prototype.slice.call(arguments)
+        d3.selection.prototype.style.apply(getNodeEl(), args)
       }
 
-      var args = Array.prototype.slice.call(arguments)
-      d3Selection.selection.prototype.style.apply(getNodeEl(), args)
       return tip
     }
 
@@ -178,46 +163,35 @@ if (typeof(window) !== 'undefined') {
       return tip
     }
 
-    // Public: sets or gets the root element anchor of the tooltip
-    //
-    // v - root element of the tooltip
-    //
-    // Returns root node of tip
-    tip.rootElement = function(v) {
-      if (!arguments.length) return rootElement
-      rootElement = v == null ? v : functor(v)
-
-      return tip
-    }
-
     // Public: destroys the tooltip and removes it from the DOM
     //
     // Returns a tip
     tip.destroy = function() {
-      if (node) {
-        getNodeEl().remove()
-        node = null
+      if(node) {
+        getNodeEl().remove();
+        node = null;
       }
-      return tip
+      return tip;
     }
 
-    function d3TipDirection() { return 'n' }
-    function d3TipOffset() { return [0, 0] }
-    function d3TipHTML() { return ' ' }
+    function d3_tip_direction() { return 'n' }
+    function d3_tip_offset() { return [0, 0] }
+    function d3_tip_html() { return ' ' }
 
-    var directionCallbacks = d3Collection.map({
-          n:  directionNorth,
-          s:  directionSouth,
-          e:  directionEast,
-          w:  directionWest,
-          nw: directionNorthWest,
-          ne: directionNorthEast,
-          sw: directionSouthWest,
-          se: directionSouthEast
-        }),
-        directions = directionCallbacks.keys()
+    var direction_callbacks = d3.map({
+      n:  direction_n,
+      s:  direction_s,
+      e:  direction_e,
+      w:  direction_w,
+      nw: direction_nw,
+      ne: direction_ne,
+      sw: direction_sw,
+      se: direction_se
+    }),
 
-    function directionNorth() {
+    directions = direction_callbacks.keys()
+
+    function direction_n() {
       var bbox = getScreenBBox()
       return {
         top:  bbox.n.y - node.offsetHeight,
@@ -225,7 +199,7 @@ if (typeof(window) !== 'undefined') {
       }
     }
 
-    function directionSouth() {
+    function direction_s() {
       var bbox = getScreenBBox()
       return {
         top:  bbox.s.y,
@@ -233,7 +207,7 @@ if (typeof(window) !== 'undefined') {
       }
     }
 
-    function directionEast() {
+    function direction_e() {
       var bbox = getScreenBBox()
       return {
         top:  bbox.e.y - node.offsetHeight / 2,
@@ -241,7 +215,7 @@ if (typeof(window) !== 'undefined') {
       }
     }
 
-    function directionWest() {
+    function direction_w() {
       var bbox = getScreenBBox()
       return {
         top:  bbox.w.y - node.offsetHeight / 2,
@@ -249,7 +223,7 @@ if (typeof(window) !== 'undefined') {
       }
     }
 
-    function directionNorthWest() {
+    function direction_nw() {
       var bbox = getScreenBBox()
       return {
         top:  bbox.nw.y - node.offsetHeight,
@@ -257,7 +231,7 @@ if (typeof(window) !== 'undefined') {
       }
     }
 
-    function directionNorthEast() {
+    function direction_ne() {
       var bbox = getScreenBBox()
       return {
         top:  bbox.ne.y - node.offsetHeight,
@@ -265,7 +239,7 @@ if (typeof(window) !== 'undefined') {
       }
     }
 
-    function directionSouthWest() {
+    function direction_sw() {
       var bbox = getScreenBBox()
       return {
         top:  bbox.sw.y,
@@ -273,47 +247,44 @@ if (typeof(window) !== 'undefined') {
       }
     }
 
-    function directionSouthEast() {
+    function direction_se() {
       var bbox = getScreenBBox()
       return {
         top:  bbox.se.y,
-        left: bbox.se.x
+        left: bbox.e.x
       }
     }
 
     function initNode() {
-      var div = d3Selection.select(document.createElement('div'))
-      div
-        .style('position', 'absolute')
-        .style('top', 0)
-        .style('opacity', 0)
-        .style('pointer-events', 'none')
-        .style('box-sizing', 'border-box')
+      var node = d3.select(document.createElement('div'));
+      node.style('position', 'absolute').style('top', 0).style('opacity', 0)
+      	.style('pointer-events', 'none').style('box-sizing', 'border-box')
 
-      return div.node()
+      return node.node()
     }
 
-    function getSVGNode(element) {
-      var svgNode = element.node()
-      if (!svgNode) return null
-      if (svgNode.tagName.toLowerCase() === 'svg') return svgNode
-      return svgNode.ownerSVGElement
+    function getSVGNode(el) {
+      el = el.node()
+      if(el.tagName.toLowerCase() === 'svg')
+        return el
+
+      return el.ownerSVGElement
     }
 
     function getNodeEl() {
-      if (node == null) {
-        node = initNode()
+      if(node === null) {
+        node = initNode();
         // re-add node to DOM
-        rootElement.appendChild(node)
-      }
-      return d3Selection.select(node)
+        document.body.appendChild(node);
+      };
+      return d3.select(node);
     }
 
     // Private - gets the screen coordinates of a shape
     //
     // Given a shape on the screen, will return an SVGPoint for the directions
-    // n(north), s(south), e(east), w(west), ne(northeast), se(southeast),
-    // nw(northwest), sw(southwest).
+    // n(north), s(south), e(east), w(west), ne(northeast), se(southeast), nw(northwest),
+    // sw(southwest).
     //
     //    +-+-+
     //    |   |
@@ -323,10 +294,10 @@ if (typeof(window) !== 'undefined') {
     //
     // Returns an Object {n, s, e, w, nw, sw, ne, se}
     function getScreenBBox() {
-      var targetel   = target || d3Selection.event.target
+      var targetel   = target || d3.event.target;
 
-      while (targetel.getScreenCTM == null && targetel.parentNode == null) {
-        targetel = targetel.parentNode
+      while ('undefined' === typeof targetel.getScreenCTM && 'undefined' === targetel.parentNode) {
+          targetel = targetel.parentNode;
       }
 
       var bbox       = {},
@@ -347,7 +318,7 @@ if (typeof(window) !== 'undefined') {
       point.x -= width
       bbox.sw = point.matrixTransform(matrix)
       point.y -= height / 2
-      bbox.w = point.matrixTransform(matrix)
+      bbox.w  = point.matrixTransform(matrix)
       point.x += width
       bbox.e = point.matrixTransform(matrix)
       point.x -= width / 2
@@ -358,17 +329,17 @@ if (typeof(window) !== 'undefined') {
 
       return bbox
     }
-
+    
     // Private - replace D3JS 3.X d3.functor() function
     function functor(v) {
-      return typeof v === 'function' ? v : function() {
+    	return typeof v === "function" ? v : function() {
         return v
-      }
+    	}
     }
 
     return tip
-  }
-// eslint-disable-next-line semi
+  };
+
 }));
 sk.createSankey = function(containerId, configSankey, dataSankey) {
 
@@ -460,6 +431,13 @@ sk.createSankey = function(containerId, configSankey, dataSankey) {
             return Math.floor(_dynamicFontSize(d.value));
         };
     }
+	
+	//options defaults for drag nodes
+	var _nodes_draggableX = false;
+	var _nodes_draggableY = true;
+	
+	if (configSankey.nodes.draggableX != undefined) _nodes_draggableX = configSankey.nodes.draggableX;
+	if (configSankey.nodes.draggableY != undefined) _nodes_draggableY = configSankey.nodes.draggableY;
 
     //Colors
     //set color in nodes, case not exists
@@ -581,20 +559,20 @@ sk.createSankey = function(containerId, configSankey, dataSankey) {
 
 
     var link = svg.append("g").selectAll(".sk-link")
-        .data(_dataSankey.links, function(d) {
-            return d.id;
+        .data(_dataSankey.links, function(l) {
+            return l.id;
         })
         .enter().append("path")
         .attr("class", "sk-link")
         .attr("d", path)
-        .style("stroke", function(d) {
-            return d.source.color;
+        .style("stroke", function(l) {
+            return l.source.color;
         })
-        .style("stroke-width", function(d) {
-            return Math.max(1, d.dy) + "px";
+        .style("stroke-width", function(l) {
+            return Math.max(1, l.width) + "px";
         })
         .sort(function(a, b) {
-            return b.dy - a.dy;
+            return b.width - a.width;
         });
     if (configSankey.tooltip.infoDiv)
         link.on('mousemove', tipLinks.move).on('mouseover', tipLinks.show).on('mouseout', tipLinks.hide);
@@ -606,7 +584,16 @@ sk.createSankey = function(containerId, configSankey, dataSankey) {
     // the function for moving the nodes
     function _dragmove(d) {
         _stopTooltips();
-        d3.select(this).attr("transform", "translate(" + d.x + "," + (d.y = Math.max(0, Math.min(dimensions.height - d.dy, d3.event.y))) + ")");
+		if (_nodes_draggableX && (d3.event.x < dimensions.width)) {
+            d.x0 = Math.max(0, Math.min(dimensions.width - sankey.nodeWidth(), d.x0 + d3.event.dx));
+            d.x1 = d.x0 + sankey.nodeWidth();
+		}
+		if (_nodes_draggableY && (d3.event.y < dimensions.height)) {
+            var heightNode = d.y1 - d.y0;
+            d.y0 = Math.max(0, Math.min(dimensions.height - (d.y1 - d.y0), d.y0 + d3.event.dy));
+            d.y1 = d.y0 + heightNode;
+		}
+        d3.select(this).attr("transform", "translate(" + d.x0 + "," + d.y0 + ")");
         sankey.update(_dataSankey);
         link.attr("d", path);
     }
@@ -618,7 +605,7 @@ sk.createSankey = function(containerId, configSankey, dataSankey) {
         .enter().append("g")
         .attr("class", "sk-node")
         .attr("transform", function(d) {
-            return "translate(" + d.x + "," + d.y + ")";
+            return "translate(" + d.x0 + "," + d.y0 + ")";
         })
     if (configSankey.tooltip.infoDiv)
         node.on('mousemove', tipNodes.move).on('mouseover', tipNodes.show).on('mouseout', tipNodes.hide);
@@ -627,17 +614,17 @@ sk.createSankey = function(containerId, configSankey, dataSankey) {
             return d.name + "\n" + _formatValueTooltip(d.value);
         });
     //Drag nodes	
-    if (configSankey.nodes.canDragNodes)
+    if (_nodes_draggableX || _nodes_draggableY)
         node.call(d3.drag().subject(function(d) {
             return d;
-        }).on("start", function() {
+        }).on("start", function(d) {
             d3.event.sourceEvent.stopPropagation();
             this.parentNode.appendChild(this);
         }).on("drag", _dragmove));
 
     node.append("rect")
         .attr("height", function(d) {
-            return d.dy;
+            return (d.y1 - d.y0);
         })
         .attr("width", sankey.nodeWidth())
         .style("fill", function(d) {
@@ -650,7 +637,7 @@ sk.createSankey = function(containerId, configSankey, dataSankey) {
     node.append("text")
         .attr("x", -6)
         .attr("y", function(d) {
-            return d.dy / 2;
+            return (d.y1 - d.y0) / 2;
         })
         .attr("dy", ".35em")
         .attr("text-anchor", "end")
@@ -665,7 +652,7 @@ sk.createSankey = function(containerId, configSankey, dataSankey) {
             return _getFontSize(d) + "px";
         })
         .filter(function(d) {
-            return d.x < dimensions.width / 2;
+            return d.x0 < dimensions.width / 2;
         })
         .attr("x", 6 + sankey.nodeWidth())
         .attr("text-anchor", "start");
@@ -684,13 +671,13 @@ sk.createSankey = function(containerId, configSankey, dataSankey) {
                 return d.id;
             })
             .sort(function(a, b) {
-                return b.dy - a.dy;
+                return b.width - a.width;
             })
             .transition()
             .duration(1300)
             .attr("d", path)
-            .style("stroke-width", function(d) {
-                return Math.max(1, d.dy) + "px";
+            .style("stroke-width", function(l) {
+                return Math.max(1, l.width) + "px";
             });
 
         svg.selectAll(".sk-node")
@@ -700,21 +687,21 @@ sk.createSankey = function(containerId, configSankey, dataSankey) {
             .transition()
             .duration(1300)
             .attr("transform", function(d) {
-                return "translate(" + d.x + "," + d.y + ")";
+                return "translate(" + d.x0 + "," + d.y0 + ")";
             });
 
         svg.selectAll(".sk-node rect")
             .transition()
             .duration(1300)
             .attr("height", function(d) {
-                return d.dy;
+                return (d.y1 - d.y0);
             });
 
         svg.selectAll(".sk-node text")
             .transition()
             .duration(1300)
             .attr("y", function(d) {
-                return d.dy / 2;
+                return (d.y1 - d.y0) / 2;
             })
             .style("font-size", function(d) {
                 return _getFontSize(d) + "px";
@@ -736,6 +723,6 @@ sk.createSankey = function(containerId, configSankey, dataSankey) {
 
     return this;
 };
-sk.version = "0.1.0";
+sk.version = "0.2.0";
 })();
 //# sourceMappingURL=sk.d3.js.map

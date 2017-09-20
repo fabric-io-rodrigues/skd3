@@ -16,7 +16,7 @@ See live [sample](https://bl.ocks.org/FabricioRHS/7dc4a5be7caaf3d8d8044680a73474
 
 ## Dependencies
 
-SKD3 requires D3v4 ([d3.js](http://d3js.org/)) minimal version **[4.9.0](https://github.com/d3/d3/releases/tag/v4.9.0)** or later.
+SKD3 requires D3v4 ([d3.js](http://d3js.org/)) `https://d3js.org/d3.v4.js`.
 
 Already tested with the latest version [4.10.2](https://github.com/d3/d3/releases/tag/v4.10.2)
 
@@ -43,6 +43,8 @@ If you use NPM, `npm install skd3`. Otherwise, download the [latest release](htt
 
 ## Usage
 
+Simple sankey component, using less code and using recent components. Create your sankey diagram easily.
+
 ```js
 var objSankey = sk.createSankey('#sankeyChart', configSankey, datajson);
 ```
@@ -58,15 +60,16 @@ var configSankey = {
 			minSize: 14,
 			maxSize: 30
 		},
-        fontSize: 14, // if not dynamicSize enabled
-		canDragNodes: true,
+		fontSize: 14, // if dynamicSizeFontNode not enabled
+		draggableX: false, // default [ false ]
+		draggableY: true, // default [ true ]
 		colors: d3.scaleOrdinal(d3.schemeCategory10)
 	},
 	links: {
 		formatValue: function(val) {
 			return d3.format(",.0f")(val) + ' TWh';
 		}
-        unit: 'TWh' // if not set formatValue function
+		unit: 'TWh' // if not set formatValue function
 	},
 	tooltip: {
 		infoDiv: true,  // if false display default tooltip
@@ -102,6 +105,13 @@ Result:
 
 ## Support to tooltips (using option/tooltip/infoDiv)
 <img alt="Sankey Tooltip" src="https://raw.githubusercontent.com/fabriciorhs/skd3/master/img/tooltip.png" width="350">
+
+## Fetures:
+
+* Dynamic node font size. More readable and better indicates values.
+* Tooltip indicating the input and output values. Intuitive comparison.
+* Update of values of the links with transition effect.
+* Drag nodes horizontally and vertically.
 
 ## Contributing
 
