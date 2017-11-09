@@ -26,11 +26,11 @@ Already tested with the latest version [4.10.2](https://github.com/d3/d3/release
 
 ## Installing
 
-If you use NPM, `npm install skd3`. Otherwise, download the [latest release](https://github.com/fabriciorhs/skd3/releases/latest). You can also load directly from [unpkg.com](https://unpkg.com/):
+If you use NPM, `npm install skd3`. Otherwise, download the [latest release](https://github.com/fabriciorhs/skd3/releases/latest). You can also load directly from [rawgit.com](https://rawgit.com/) or [unpkg.com](https://unpkg.com/):
 
 ```html
-<script src="https://unpkg.com/skd3/build/sk.d3.min.js"></script>
-<link  href="https://unpkg.com/skd3/build/sk.d3.min.css" rel="stylesheet" type="text/css" />
+<script src="//rawgit.com/FabricioRHS/skd3/master/build/sk.d3.min.js"></script>
+<link  href="//rawgit.com/FabricioRHS/skd3/master/build/sk.d3.min.css" rel="stylesheet" type="text/css" />
 <style>
 	#sankeyChart {
 		height: 500px;
