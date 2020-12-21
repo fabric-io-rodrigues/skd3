@@ -1,8 +1,6 @@
 # skd3
 Sankey Diagram made easy. A javascript library that extends the popular D3.js/d3-sankey to enable fast and beautiful.
 
-[![Build Status](https://travis-ci.org/fabric-io-rodrigues/skd3.svg?branch=master)](https://travis-ci.org/fabric-io-rodrigues/skd3)
-
 Inspired by the work of Mike Bostock's [`d3-sankey`](http://github.com/d3/d3-sankey), As a proposal to simplify the generation of the sankey chart.
 
 Sankey diagrams visualize the directed flow between nodes in an acyclic network. For example: ([`D3's classic energy sankey diagram`](https://bost.ocks.org/mike/sankey/)) this diagram shows a possible scenario of UK energy production and consumption in 2050:
