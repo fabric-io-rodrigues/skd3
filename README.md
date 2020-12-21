@@ -1,18 +1,17 @@
 # skd3
 Sankey Diagram made easy. A javascript library that extends the popular D3.js/d3-sankey to enable fast and beautiful.
 
-[![Build Status](https://travis-ci.org/FabricioRHS/skd3.svg?branch=master)](https://travis-ci.org/FabricioRHS/skd3)
-[![Dependencies Status](https://david-dm.org/fabriciorhs/skd3.svg)](https://david-dm.org/fabriciorhs/skd3)
+[![Build Status](https://travis-ci.org/fabric-io-rodrigues/skd3.svg?branch=master)](https://travis-ci.org/fabric-io-rodrigues/skd3)
 
 Inspired by the work of Mike Bostock's [`d3-sankey`](http://github.com/d3/d3-sankey), As a proposal to simplify the generation of the sankey chart.
 
 Sankey diagrams visualize the directed flow between nodes in an acyclic network. For example: ([`D3's classic energy sankey diagram`](https://bost.ocks.org/mike/sankey/)) this diagram shows a possible scenario of UK energy production and consumption in 2050:
 
-[<img alt="Sankey diagram" src="https://raw.githubusercontent.com/fabriciorhs/skd3/master/img/energy.png" width="960">](https://bl.ocks.org/FabricioRHS/7dc4a5be7caaf3d8d8044680a7347447)
+[<img alt="Sankey diagram" src="https://raw.githubusercontent.com/fabric-io-rodrigues/skd3/master/img/energy.png" width="960">](https://bl.ocks.org/fabric-io-rodrigues/7dc4a5be7caaf3d8d8044680a7347447)
 
 Source: Department of Energy & Climate Change, from: [`Mike Bostock - json sample`](https://bl.ocks.org/mbostock/ca9a0bb7ba204d12974bca90acc507c0).
 
-See live [sample](https://bl.ocks.org/FabricioRHS/7dc4a5be7caaf3d8d8044680a7347447)
+See live [sample](https://bl.ocks.org/fabric-io-rodrigues/7dc4a5be7caaf3d8d8044680a7347447)
 
 ## Dependencies
 
@@ -26,11 +25,11 @@ Already tested with the latest version [4.10.2](https://github.com/d3/d3/release
 
 ## Installing
 
-If you use NPM, `npm install skd3`. Otherwise, download the [latest release](https://github.com/fabriciorhs/skd3/releases/latest). You can also load directly from [rawgit.com](https://rawgit.com/) or [unpkg.com](https://unpkg.com/):
+If you use NPM, `npm install skd3`. Otherwise, download the [latest release](https://github.com/fabric-io-rodrigues/skd3/releases/latest). You can also load directly from [rawgit.com](https://rawgit.com/) or [unpkg.com](https://unpkg.com/):
 
 ```html
-<script src="//rawgit.com/FabricioRHS/skd3/master/build/sk.d3.min.js"></script>
-<link  href="//rawgit.com/FabricioRHS/skd3/master/build/sk.d3.min.css" rel="stylesheet" type="text/css" />
+<script src="//rawgit.com/fabric-io-rodrigues/skd3/master/build/sk.d3.min.js"></script>
+<link  href="//rawgit.com/fabric-io-rodrigues/skd3/master/build/sk.d3.min.css" rel="stylesheet" type="text/css" />
 <style>
 	#sankeyChart {
 		height: 500px;
@@ -101,10 +100,10 @@ objSankey.updateData(new_dataJson);
 
 Result:
 
-<img alt="Sankey transitions" src="https://raw.githubusercontent.com/fabriciorhs/skd3/master/img/sankey_transitions.gif" width="400">
+<img alt="Sankey transitions" src="https://raw.githubusercontent.com/fabric-io-rodrigues/skd3/master/img/sankey_transitions.gif" width="400">
 
 ## Support to tooltips (using option/tooltip/infoDiv)
-<img alt="Sankey Tooltip" src="https://raw.githubusercontent.com/fabriciorhs/skd3/master/img/tooltip.png" width="350">
+<img alt="Sankey Tooltip" src="https://raw.githubusercontent.com/fabric-io-rodrigues/skd3/master/img/tooltip.png" width="350">
 
 ## Fetures:
 
@@ -115,7 +114,7 @@ Result:
 
 ## Contributing
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/fabriciorhs/skd3/issues/new)
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/fabric-io-rodrigues/skd3/issues/new)
 
 ## Author
 
@@ -125,7 +124,7 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 
 ## License
 
-Copyright © 2017 [Fabricio Rodrigues](https://github.com/fabriciorhs)
+Copyright © 2017 [Fabricio Rodrigues](https://github.com/fabric-io-rodrigues)
 Released under the MIT license.
 
 ***
