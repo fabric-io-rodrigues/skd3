@@ -121,8 +121,7 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 
 **Fabricio Rodrigues**
 
-+ [github/fabriciorhs](https://github.com/fabriciorhs)
-+ [twitter/fabriciorhs](http://twitter.com/fabriciorhs)
++ [github/fabric-io-rodrigues](https://github.com/fabric-io-rodrigues)
 
 ## License
 
